@@ -12,24 +12,22 @@ const Home = () => {
     <>
       <Nav />
 
-      {product.length > 0 && (
-        <div className="container content">
-          <div className="grid grid-cols-3">
-            {product.map((item) => {
-              return (
-                <ProductsCard
-                  key={item.id}
-                  title={item.title}
-                  price={item.price}
-                  img={item.thumbnail}
-                  rating={item.rating}
-                  id={item.id}
-                />
-              );
-            })}
-          </div>
+      <div className="container content">
+        <div className="grid grid-cols-3">
+          {product.map((item) => {
+            return (
+              <ProductsCard
+                key={item.id}
+                title={item.title}
+                price={item.price}
+                img={item.thumbnail}
+                rating={item.rating}
+                id={item.id}
+              />
+            );
+          })}
         </div>
-      )}
+      </div>
     </>
   );
 };
