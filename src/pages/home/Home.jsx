@@ -6,27 +6,30 @@ import { DataContext } from "../../hooks/Data/DataHook";
 const Home = () => {
   const { getAllData, product } = useContext(DataContext);
   useEffect(() => {
-    if (!product) getAllData();
+    if (product.length === 0) getAllData();
   }, []);
   return (
     <>
       <Nav />
 
-      <div className="container content">
-        <div className="grid grid-cols-3">
-          {product.map((item) => {
-            return (
-              <ProductsCard
-                key={item.id}
-                title={item.title}
-                price={item.price}
-                img={item.thumbnail}
-                rating={item.rating}
-              />
-            );
-          })}
+      {product.length > 0 && (
+        <div className="container content">
+          <div className="grid grid-cols-3">
+            {product.map((item) => {
+              return (
+                <ProductsCard
+                  key={item.id}
+                  title={item.title}
+                  price={item.price}
+                  img={item.thumbnail}
+                  rating={item.rating}
+                  id={item.id}
+                />
+              );
+            })}
+          </div>
         </div>
-      </div>
+      )}
     </>
   );
 };
