@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Nav from "../../components/nav/Nav";
 import RequestCard from "../../components/ProductsCards/RequestCard";
+import Footer from "../../components/generalComponents/footer/Footer";
 
 const Request = () => {
   const [request, setRequest] = useState({});
@@ -153,6 +154,7 @@ const Request = () => {
             />
           ))}
       </div>
+      <Footer />
     </>
   );
 };

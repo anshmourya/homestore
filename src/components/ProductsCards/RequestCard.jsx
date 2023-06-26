@@ -8,8 +8,10 @@ const RequestCard = ({ image, title, price, desc }) => {
           className="object-contain rounded-lg w-[150px] aspect-ratio: auto;"
         />
         <div>
-          <span className="inline-block my-3">{title}</span>
-          <p>{desc}</p>
+          <span className="inline-block my-3 text-lg font-semibold capitalize">
+            {title}
+          </span>
+          <p className="capitalize">{desc}</p>
         </div>
         <div className="absolute right-6 top-6">
           <span className="block my-1">&#8377; {price}</span>
