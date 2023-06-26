@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const NavList = ({ lists, onClikFunction, ulClass, liClass }) => {
   return (
     <ul className={ulClass}>
@@ -7,6 +9,7 @@ const NavList = ({ lists, onClikFunction, ulClass, liClass }) => {
           item={item.title}
           liClass={liClass}
           onClikFunction={onClikFunction}
+          link={item.link}
         />
       ))}
     </ul>
@@ -15,11 +18,14 @@ const NavList = ({ lists, onClikFunction, ulClass, liClass }) => {
 
 export default NavList;
 
-function RenderList({ item, liClass, onClikFunction }) {
+function RenderList({ item, liClass, onClikFunction, link }) {
   return (
-    <li className={liClass} onClick={onClikFunction}>
+    <Link to={link}>
       {" "}
-      {item}
-    </li>
+      <li className={liClass} onClick={onClikFunction}>
+        {" "}
+        {item}
+      </li>
+    </Link>
   );
 }

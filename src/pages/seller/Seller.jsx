@@ -136,7 +136,6 @@ const Seller = () => {
             />
           ))}
       </div>
-      <Footer />
     </>
   );
 };

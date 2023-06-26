@@ -1,10 +1,11 @@
+import React from "react";
 import { AiFillStar } from "react-icons/ai";
 import { Link } from "react-router-dom";
 const ProductsCard = ({ title, price, rating, img, id }) => {
   return (
     <>
       <div className="max-w-[296px] max-h-[400px] p-3 product-card border border-transparent transition-all cursor-pointer my-3 ">
-        <span className="float-right mx-3 px-1 my-2  font-semibold bg-red-500 text-sm text-gray-50  ">
+        <span className="float-right px-1 mx-3 my-2 text-sm font-semibold bg-red-500 text-gray-50 ">
           {price > 1000 ? "For Sale" : "For Rent"}
         </span>
         <img
@@ -32,4 +33,4 @@ const ProductsCard = ({ title, price, rating, img, id }) => {
   );
 };
 
-export default ProductsCard;
+export default React.memo(ProductsCard);

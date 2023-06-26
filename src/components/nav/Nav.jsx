@@ -3,13 +3,12 @@ import { IoIosArrowDown } from "react-icons/io";
 import NavList from "./NavList";
 import Inputs from "../generalComponents/Inputs/Inputs";
 
-const Nav = () => {
+const Nav = ({ search }) => {
   const NavData = [
     { title: "Home", link: "/", id: 1 },
-    { title: "sell", link: "/sell", id: 2 },
+    { title: "sell", link: "/seller", id: 2 },
     { title: "request", link: "/request", id: 3 },
-    { title: "rent", link: "/rent", id: 4 },
-    { title: "profile", link: "/profile", id: 5 },
+    { title: "profile", link: "/profile", id: 4 },
   ];
 
   const IconWithTitle = ({ icon, title }) => (
@@ -33,6 +32,7 @@ const Nav = () => {
           style={"outline-none border p-2 w-2/6 rounded-md"}
           type={"text"}
           placeholder={"Search For Any Product"}
+          onChangeFunction={(e) => search(e.target.value)}
         />
         <NavList
           lists={NavData}

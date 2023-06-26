@@ -154,7 +154,6 @@ const Request = () => {
             />
           ))}
       </div>
-      <Footer />
     </>
   );
 };
