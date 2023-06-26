@@ -8,7 +8,7 @@ import SliderProduct from "../../components/ProductsCards/SliderProduct";
 import Btns from "../../components/generalComponents/btns/Btns";
 import Footer from "../../components/generalComponents/footer/Footer";
 
-const Detail = () => {
+const Detail = ({ price }) => {
   const { id } = useParams();
   const { getSingleProduct } = useContext(DataContext);
   const [singleProduct, setSingleProduct] = useState(null);
@@ -25,7 +25,6 @@ const Detail = () => {
     <>
       {singleProduct && (
         <>
-          {console.log(singleProduct.images)}
           <Nav />
           <div className="flex content">
             <SliderStructure
@@ -35,7 +34,10 @@ const Detail = () => {
               autoplay={true}
             />
             <div>
-              <PriceDetail />
+              <PriceDetail
+                price={singleProduct.price}
+                title={singleProduct.title}
+              />
               <SellerDetails />
             </div>
           </div>
@@ -48,13 +50,15 @@ const Detail = () => {
 
 export default Detail;
 
-function PriceDetail({}) {
+function PriceDetail({ price, title }) {
   return (
     <div className="h-auto p-3 mx-auto border rounded-lg">
       <div className="flex items-center justify-between my-3 ">
         <div>
-          <span className="text-2xl font-semibold leading-10">₹ 2,800</span>
-          <p className="text-gray-400">Plastic table with 4 Nos chairs</p>
+          <span className="text-2xl font-semibold leading-10">
+            ₹ {price * 10}
+          </span>
+          <p className="text-gray-400">{title}</p>
         </div>
         <div className="flex gap-2 text-lg">
           <AiOutlineHeart />
