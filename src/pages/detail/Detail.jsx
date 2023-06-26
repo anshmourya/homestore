@@ -7,6 +7,7 @@ import SliderStructure from "../../components/generalComponents/Slider/SliderStr
 import SliderProduct from "../../components/ProductsCards/SliderProduct";
 import Btns from "../../components/generalComponents/btns/Btns";
 import Footer from "../../components/generalComponents/footer/Footer";
+import { Link } from "react-router-dom";
 
 const Detail = ({ price }) => {
   const { id } = useParams();
@@ -81,10 +82,12 @@ function SellerDetails({}) {
         className="inline mr-6 rounded-full w-14"
       />
       <span className="text-lg font-bold">Vinu</span>
-      <Btns
-        title={"Contact seller"}
-        btnStyle={"block m-auto border w-full text-lg my-4 h-10 rounded-lg"}
-      />
+      <Link to="/chat">
+        <Btns
+          title={"Contact seller"}
+          btnStyle={"block m-auto border w-full text-lg my-4 h-10 rounded-lg"}
+        />
+      </Link>
     </div>
   );
 }
